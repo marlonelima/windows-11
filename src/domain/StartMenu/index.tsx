@@ -4,7 +4,9 @@ import { RootState } from "../../stores";
 import { Container } from "./styles";
 
 export const StartMenu = () => {
-  const state = useSelector((state: RootState) => state.main);
+  const isStartMenuActive = useSelector(
+    (state: RootState) => state.main.startMenu
+  );
 
-  return <Container active={state.startMenu}></Container>;
+  return <Container active={isStartMenuActive}></Container>;
 };
