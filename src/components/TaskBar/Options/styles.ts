@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Settings } from "./../../../settings";
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -11,7 +13,7 @@ export const Container = styled.div`
   transition: 0.2s;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.75);
+    background: ${Settings.general.opacity.main};
     transition: 0.2s;
   }
 `;

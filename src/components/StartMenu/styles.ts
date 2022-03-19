@@ -1,15 +1,21 @@
 import styled from "styled-components";
+import { Settings } from "../../settings";
 
-export const Container = styled.div`
+interface IContainer {
+  active: boolean;
+}
+
+export const Container = styled.div<IContainer>`
   width: 36rem;
   height: 40rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(1rem);
+  background: ${Settings.general.opacity.main};
+  backdrop-filter: ${Settings.general.blur.medium};
 
   position: absolute;
 
+  transition: 0.5s;
   left: 50%;
-  bottom: 4rem;
+  bottom: ${({ active }) => (active ? "4rem" : "-100%")};
   transform: translateX(-50%);
   border-radius: 0.5rem;
 `;

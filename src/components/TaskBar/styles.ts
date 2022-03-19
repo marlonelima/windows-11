@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
+import { Settings } from "../../settings";
+
 export const Container = styled.div`
   width: 100%;
   height: 3rem;
-  background: rgba(255, 255, 255, 0.7);
+  background: ${Settings.general.opacity.main};
   position: fixed;
   bottom: 0;
   left: 0;
-  backdrop-filter: blur(15px);
+  backdrop-filter: ${Settings.general.blur.hard};
 
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 1000;
 `;
 
 export const Apps = styled.ul`
@@ -20,15 +23,20 @@ export const Apps = styled.ul`
   align-self: center;
   margin: 0 auto;
 
-  li {
-    padding: 0.1rem 0.4rem;
+  button {
+    border: none;
+    background: none;
+    padding: 0.3rem 0.4rem;
     border-radius: 0.5rem;
     transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  li:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
+  button:hover {
+    background: ${Settings.general.opacity.main};
+    transform: scale(1.15);
   }
 
   li:not(:last-child) {
